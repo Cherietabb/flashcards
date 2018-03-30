@@ -1,0 +1,27 @@
+[
+  {
+    "id": 1,
+    "definition": "process of identifying a user attempting to connect to a system",
+    "term": "Authentication"
+  },
+  {
+    "id": 2,
+    "definition": "granting object privileges to users based on their identities.",
+    "term": "Authorization"
+  },
+  {
+    "id": 3,
+    "definition": "clause is used to restrict the groups returned by a query",
+    "term": "The HAVING clause"
+  },
+  {
+    "id": 4,
+    "definition": "function determines how widely data is spread in a group.  Calculated based on the minimum and maximum values for a specified field.  If the data values are clustered together closely, it is small.",
+    "term": "The VARIANCE function"
+  },
+  {
+    "id": 5,
+    "definition": "The component on which the other GROUP BY extensions, ROLLUP and CUBE are built.",
+    "term": "The GROUPING SETS Expression"
+  }
+]
