@@ -27,7 +27,6 @@ class App extends Component {
       <MuiThemeProvider muiTheme={muiTheme}>
 	      <div>
 		      <Header/>
-		      <hr/>
 		      <CardContainer />
 	      </div>
       </MuiThemeProvider>

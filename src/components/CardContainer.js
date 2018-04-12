@@ -5,7 +5,6 @@ const contentStyles = theme => ({
 	container: {
 		display: 'flex',
 		flexDirection: 'row',
-		flexWrap: 'wrap',
 		alignItems: 'center',
 	},
 	pos: {

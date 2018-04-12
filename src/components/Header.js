@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import AppBar from 'material-ui/AppBar';
-import FlatButton from 'material-ui/FlatButton';
 import muiThemeable from 'material-ui/styles/muiThemeable';
 
 const contentStyle = (props) => ({
@@ -19,7 +18,6 @@ class Header extends Component {
 				<AppBar
 					style={contentStyle.appBar}
 					title="Flash Cards"
-					iconElementRight={<FlatButton label="Save" />}
 				/>
 			</div>
 		)

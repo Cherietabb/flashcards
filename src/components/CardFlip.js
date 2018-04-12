@@ -1,8 +1,7 @@
 import React, {Component} from 'react';
 import Paper from 'material-ui/Paper';
 import ReactCardFlip from 'react-card-flip';
-// import fetch from 'isomorphic-fetch';
-// import data from './data.json';
+import data from './data.json';
 
 const contentStyles = {
 	root: {
@@ -16,11 +15,15 @@ const contentStyles = {
 	paper: {
 		display: 'flex',
 		alignItems: 'center',
-		justifyContent: 'space-around',
-		minHeight: 300,
+		justifyContent: 'center',
+		minHeight: 220,
 		minWidth: 450,
 		margin: 20
 	},
+	span: {
+		padding: '10px',
+		fontSize: '21pt'
+	}
 };
 
 class CardFlip extends Component {
@@ -28,7 +31,6 @@ class CardFlip extends Component {
 		super(props);
 		this.state = {
 			isFlipped: false,
-			data: null
 		};
 		this.handleClick = this.handleClick.bind(this);
 	}
@@ -36,28 +38,27 @@ class CardFlip extends Component {
 	handleClick(e) {
 		e.preventDefault();
 		this.setState({
-			isFlipped: !this.state.isFlipped,
+			isFlipped: !this.state.isFlipped
 		});
 	}
 
-	// componentWillMount() {
-	// 	fetch('./data.json')
-	// 		.then(res => {
-	// 			this.setState({
-	// 				data: res.json()
-	// 			})
-	// 		})
-	// }
+	componentWillMount() {
+		this.setState({
+			id: data[0].id,
+			definition: data[0].definition,
+			term: data[0].term,
+			isFlipped: false
+		})
+	}
 
 
 	render() {
-		// const {data} = this.state;
 		return (
 			<div style={contentStyles.root}>
 				<ReactCardFlip
 					isFlipped={this.state.isFlipped}
-					flipSpeedBackToFront={1.0}
-					flipSpeedFrontToBack={1.0}
+					flipSpeedBackToFront={1.5}
+					flipSpeedFrontToBack={1.5}
 				>
 					<div
 						key="front"
@@ -65,7 +66,12 @@ class CardFlip extends Component {
 					>
 						<Paper
 							style={contentStyles.paper}
+							zDepth={4}
 						>
+
+							<span style={contentStyles.span}
+							>{this.state.definition}</span>
+
 						</Paper>
 					</div>
 					<div
@@ -74,7 +80,10 @@ class CardFlip extends Component {
 					>
 						<Paper
 							style={contentStyles.paper}
+							zDepth={4}
 						>
+							<div style={contentStyles.span}
+							>{this.state.term}</div>
 						</Paper>
 					</div>
 				</ReactCardFlip>
